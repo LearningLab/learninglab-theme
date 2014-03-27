@@ -15,6 +15,7 @@ define('THEME_URL', get_template_directory_uri());
 function add_to_context($data) {
     /* this is where you can add your own data to Timber's context object */
     //$data['menu'] = new TimberMenu();
+
     return $data;
 }
 
