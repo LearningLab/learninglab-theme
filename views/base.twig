@@ -7,11 +7,13 @@
     <head>
         <meta charset="{{ site.charset }}" />
         <meta name="description" content="{{ site.description }}">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site.theme.link }}/style.css" type="text/css" media="screen">
+
         <link rel="pingback" href="{{ site.pingback_url }}" />
         
         <title>{{wp_title}}</title>
@@ -21,9 +23,10 @@
         {% endblock %}
     </head>
     <body class="{{ body_class }}" data-source="base.twig">
+        {% include 'topnav.twig' %}
         <header class="header">
             {% block header %}
-            <div class="wrapper">
+            <div class="container">
 
                 <h1 class="hdr-logo" role="banner">
                     <a class="hdr-logo-link" href="/" title="Timber" rel="home">{{ bloginfo('name') }}</a>
@@ -42,22 +45,47 @@
             {% endblock %}
         </header>
 
+        <section id="content" role="main" class="container">
+            
+            <div class="row">
+                <div class="posts col-md-8">
 
-        <section id="content" role="main" class="content-wrapper">
-            {% if title %}<h1>{{ title }}</h1>{% endif %}
-            <div class="wrapper {{ sidebar_class }}">
                 {% block content %}
                     Sorry, no content
                 {% endblock %}
-            </div>
+                </div>
+
             {% if sidebar %}
-                <aside class="layout-sidebar">
-                    {{ sidebar }}
-                </aside>
+            <aside class="sidebar col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">About Learning Lab</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>Learning Lab explores the education experiments in Massachusetts schools, connecting parents, educators, researchers and policy makers in their efforts to provide the best educational opportunities for Massachusetts children. </p>
+
+                        <p>Together we explore success and failure, finding common ground through data-driven reporting and thoughtful conversation.</p>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Ask Us Anything</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="#">How are schools funded in Massachusetts?</a></li>
+                            <li><a href="#">What is the local/state/federal mix in education funding in MA? Is this different across schools and districts?</a></li>
+                            <li><a href="#">Are there disparities in funding between schools? Between districts?</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside> <!-- /.sidebar -->
             {% endif %}
+            </div> <!-- /.row -->
         </section>
 
-        <footer id="footer">
+        <footer id="footer" class="container">
             {% include 'footer.twig' %}
         </footer>
         {{ function('wp_footer') }}

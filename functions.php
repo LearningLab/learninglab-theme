@@ -16,6 +16,9 @@ function add_to_context($data) {
     /* this is where you can add your own data to Timber's context object */
     //$data['menu'] = new TimberMenu();
 
+    // always get the main sidebar
+    // this may be overridden in views
+    $context['sidebar'] = Timber::get_widgets('sidebar-main');
     return $data;
 }
 
