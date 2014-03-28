@@ -11,15 +11,29 @@ add_filter('timber_context', 'add_to_context');
 
 define('THEME_URL', get_template_directory_uri());
 
+/***
+Return an array of Timber sidebars for all Largo sidebars
+***/
+function get_sidebars() {
+    $ids = array('sidebar-main', 'sidebar-single', 'footer-1', 'footer-2', 'footer-3');
+    $sidebars = array();
 
-function add_to_context($data) {
+    foreach ($ids as $sidebar) {
+        $sidebars[$sidebar] = Timber::get_widgets($sidebar);
+    }
+
+    return $sidebars;
+}
+
+
+function add_to_context($context) {
     /* this is where you can add your own data to Timber's context object */
     //$data['menu'] = new TimberMenu();
 
     // always get the main sidebar
     // this may be overridden in views
-    $context['sidebar'] = Timber::get_widgets('sidebar-main');
-    return $data;
+    $context['sidebars'] = get_sidebars();
+    return $context;
 }
 
 
@@ -34,6 +48,7 @@ function add_to_twig($twig) {
 function load_scripts() {
     wp_enqueue_script('jquery');
 }
+
 
 /***
 Turn off Largo frontend pieces (some may be turned back on later)

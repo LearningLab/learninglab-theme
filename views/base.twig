@@ -55,7 +55,6 @@
                 {% endblock %}
                 </div>
 
-            {% if sidebar %}
             <aside class="sidebar col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -80,10 +79,13 @@
                         </ul>
                     </div>
                 </div>
-
-                {{ sidebar }}
+                
+                {% block sidebar %}
+                {{ sidebars['sidebar-main'] }}
+                {% endblock %}
+                
             </aside> <!-- /.sidebar -->
-            {% endif %}
+
             </div> <!-- /.row -->
         </section>
 
