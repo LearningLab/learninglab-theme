@@ -1,8 +1,30 @@
 {% extends "base.twig" %}
 
-{% block content %}
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+{% block posts %}
+    {% for post in posts %}
+        {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+    {% endfor %}
+
+{% endblock %}
+
+{% block pagination %}
+<div class="paging">
+
+    <ul class="pager">
+        {% if pagination.prev %}
+        <li class="previous"><a href="{{ pagination.prev.link }}">&larr; Newer</a></li>
+        {% else %}
+        <li class="previous disabled"><a>&larr; Newer</a></li>
+        {% endif %}
+        
+        {% if pagination.next %}
+        <li class="next"><a href="{{ pagination.next.link }}">Older &rarr;</a></li>
+        {% else %}
+        <li class="next disabled"><a>Older &rarr;</a></li>
+        {% endif %}
+
+    </ul>
+
+</div>
 
 {% endblock %}

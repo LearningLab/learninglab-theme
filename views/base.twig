@@ -50,41 +50,20 @@
             <div class="row">
                 <div class="posts col-md-8">
 
-                {% block content %}
+                {% block posts %}
                     Sorry, no content
                 {% endblock %}
+
+                {% block pagination %}{% endblock %}
                 </div>
 
-            <aside class="sidebar col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">About Learning Lab</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p>Learning Lab explores the education experiments in Massachusetts schools, connecting parents, educators, researchers and policy makers in their efforts to provide the best educational opportunities for Massachusetts children. </p>
+                <aside class="sidebar col-md-4">
 
-                        <p>Together we explore success and failure, finding common ground through data-driven reporting and thoughtful conversation.</p>
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Ask Us Anything</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul>
-                            <li><a href="#">How are schools funded in Massachusetts?</a></li>
-                            <li><a href="#">What is the local/state/federal mix in education funding in MA? Is this different across schools and districts?</a></li>
-                            <li><a href="#">Are there disparities in funding between schools? Between districts?</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                {% block sidebar %}
-                {{ sidebars['sidebar-main'] }}
-                {% endblock %}
-                
-            </aside> <!-- /.sidebar -->
+                    {% block sidebar %}
+                    {{ sidebars['sidebar-main'] }}
+                    {% endblock %}
+                    
+                </aside> <!-- /.sidebar -->
 
             </div> <!-- /.row -->
         </section>

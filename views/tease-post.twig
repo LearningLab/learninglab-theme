@@ -1,10 +1,17 @@
 {% extends "tease.twig" %}
 {% block content %}
 	<h2 class="h2"><a href="{{ post.link }}">{{ post.title }}</a></h2>
-	<p>{{ post.get_preview(25) }}</p>
+	<h5 class="byline">
+		<span class="by-author">
+			<span class="by">By:</span> 
+			<span class="author vcard" itemprop="author">
+				<a href="{{ post.author.path }}" title="Posts by {{ post.author.name }}" class="url fn" rel="author">{{ post.author.name }}</a>
+			</span>
+		</span>
+		<span class="sep"> | </span>
+		<time class="entry-date updated dtstamp pubdate" datetime="{{ post.post_date }}">{{ post.display_date }}</time>
+	</h5>
 
-	{% if post.get_thumbnail %}
-		<a href="{{ post.link }}"><img src="{{post.thumbnail.src}}" class="img-responsive"></a>
-	{% endif %}
+	<div class="excerpt">{{ post.get_preview(50, false, 'Read&nbsp;More&nbsp;&rarr;', false)|apply_filters('the_content') }}</div>
 
 {% endblock %}
