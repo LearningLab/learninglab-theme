@@ -57,9 +57,11 @@ function get_sidebars() {
     return $sidebars;
 }
 
-
+/***
+Override the default search form with a proper template
+***/
 function ll_search_form($form) {
-    $context = array('home_url' => home_url('/'));
+    $context = array('site' => new TimberSite());
     $form = Timber::compile('searchform.twig', $context);
     return $form;
 }
