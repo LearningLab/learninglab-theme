@@ -3,27 +3,19 @@
 //add_theme_support('post-formats');
 //add_theme_support('post-thumbnails');
 //add_theme_support('menus');
+add_theme_support('html5', array('search-form')); 
 
+// twig and timber filters
 add_filter('get_twig', 'add_to_twig');
 add_filter('timber_context', 'add_to_context');
+
+// other filters
+add_filter('get_search_form', 'll_search_form');
 
 //add_action('wp_enqueue_scripts', 'load_scripts');
 
 define('THEME_URL', get_template_directory_uri());
 
-/***
-Return an array of Timber sidebars for all Largo sidebars
-***/
-function get_sidebars() {
-    $ids = array('sidebar-main', 'sidebar-single', 'footer-1', 'footer-2', 'footer-3');
-    $sidebars = array();
-
-    foreach ($ids as $sidebar) {
-        $sidebars[$sidebar] = Timber::get_widgets($sidebar);
-    }
-
-    return $sidebars;
-}
 
 
 function add_to_context($context) {
@@ -33,6 +25,7 @@ function add_to_context($context) {
     // always get the main sidebar
     // this may be overridden in views
     $context['sidebars'] = get_sidebars();
+
     return $context;
 }
 
@@ -49,6 +42,27 @@ function load_scripts() {
     wp_enqueue_script('jquery');
 }
 
+
+/***
+Return an array of Timber sidebars for all Largo sidebars
+***/
+function get_sidebars() {
+    $ids = array('sidebar-main', 'sidebar-single', 'footer-1', 'footer-2', 'footer-3');
+    $sidebars = array();
+
+    foreach ($ids as $sidebar) {
+        $sidebars[$sidebar] = Timber::get_widgets($sidebar);
+    }
+
+    return $sidebars;
+}
+
+
+function ll_search_form($form) {
+    $context = array('home_url' => home_url('/'));
+    $form = Timber::compile('searchform.twig', $context);
+    return $form;
+}
 
 /***
 Turn off Largo frontend pieces (some may be turned back on later)
