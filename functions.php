@@ -20,11 +20,11 @@ define('THEME_URL', get_template_directory_uri());
 
 function add_to_context($context) {
     /* this is where you can add your own data to Timber's context object */
-    //$data['menu'] = new TimberMenu();
 
     // always get the main sidebar
     // this may be overridden in views
-    $context['sidebars'] = get_sidebars();
+    $context['sidebars'] = get_largo_sidebars();
+    $context['menus'] = get_largo_menus();
 
     return $context;
 }
@@ -46,7 +46,7 @@ function load_scripts() {
 /***
 Return an array of Timber sidebars for all Largo sidebars
 ***/
-function get_sidebars() {
+function get_largo_sidebars() {
     $ids = array('sidebar-main', 'sidebar-single', 'footer-1', 'footer-2', 'footer-3');
     $sidebars = array();
 
@@ -55,6 +55,27 @@ function get_sidebars() {
     }
 
     return $sidebars;
+}
+
+/***
+Get all of Largo's menus, same as we do with sidebars
+***/
+function get_largo_menus() {
+    // copied from Largo/inc/nav-menus.php
+    $menus = array(
+        'global-nav'            => __( 'Global Navigation', 'largo' ),
+        'navbar-categories'     => __( 'Navbar Categories List', 'largo' ),
+        'navbar-supplemental'   => __( 'Navbar Supplemental Links', 'largo' ),
+        'dont-miss'             => __( 'Don\'t Miss', 'largo' ),
+        'footer'                => __( 'Footer Navigation', 'largo' ),
+        'footer-bottom'         => __( 'Footer Bottom', 'largo' )
+    );
+
+    foreach ($menus as $id => $name) {
+        $menus[$id] = new TimberMenu($id);
+    }
+
+    return $menus;
 }
 
 /***
