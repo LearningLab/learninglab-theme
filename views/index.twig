@@ -1,6 +1,12 @@
 {% extends "base.twig" %}
 
 {% block posts %}
+    {% if search_query %}
+    <div class="search_query">
+        <p class="alert alert-info">Search: "<strong>{{ search_query }}</strong>" found <strong>{{ posts|length|number_format }}</strong> posts</p>
+    </div>
+    {% endif %}
+    
     {% for post in posts %}
         {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
     {% endfor %}
