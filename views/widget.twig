@@ -1,0 +1,11 @@
+{{ before_widget|raw }}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ instance.title }}</h3>
+    </div>
+    <div class="panel-body">
+        {{ function('of_get_option', 'site_blurb')|wpautop }}
+    </div>
+</div>
+
+{{ after_widget|raw }}

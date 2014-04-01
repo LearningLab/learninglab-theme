@@ -1,8 +1,15 @@
 <?php
 
-//add_theme_support('post-formats');
-//add_theme_support('post-thumbnails');
-//add_theme_support('menus');
+// all our includes
+$includes = array(
+    '/inc/widgets.php'
+);
+
+// include all the things
+foreach ( $includes as $include ) {
+    require_once( get_stylesheet_directory() . $include );
+}
+
 add_theme_support('html5', array('search-form')); 
 
 // twig and timber filters
