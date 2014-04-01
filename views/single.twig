@@ -26,16 +26,7 @@
 	</section>
 
 	<section class="comments">
-		<div class="respond">
-				{{ comment_form }}
-		</div>
-		<div class="responses">
-
-			{% for comment in post.get_comments() %}
-				{% include "comment.twig" %}
-			{% endfor %}
-		</div>
-
+		{{ function('comments_template') }}
 	</section>
 
 </article>

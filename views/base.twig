@@ -18,7 +18,7 @@
         
         <title>{{wp_title}}</title>
         
-        {{ function('wp_head') }}
+        {{ wp_head }}
         {% block head %}
         {% endblock %}
     </head>
@@ -71,6 +71,6 @@
         <footer id="footer">
             {% include 'footer.twig' %}
         </footer>
-        {{ function('wp_footer') }}
+        {{ wp_footer }}
     </body>
 </html>
