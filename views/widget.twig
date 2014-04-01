@@ -4,7 +4,7 @@
         <h3 class="panel-title">{{ instance.title }}</h3>
     </div>
     <div class="panel-body">
-        {{ function('of_get_option', 'site_blurb')|wpautop }}
+        {% block widget_body %}{% endblock %}
     </div>
 </div>
 
