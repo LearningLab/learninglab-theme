@@ -1,0 +1,9 @@
+<h2>{{ title }}</h2>
+
+<form action="options.php" method="post">
+    
+    {{ function('settings_fields', settings_field) }}
+    {{ function('do_settings_sections', settings_section) }}
+    
+    <p><input class="button-primary" name="Submit" type="submit" value="Save Changes"></p>
+</form>

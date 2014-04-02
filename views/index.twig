@@ -1,5 +1,18 @@
 {% extends "base.twig" %}
 
+{% block head %}
+<script>
+    var SOUNDCLOUD_CLIENT_ID = "{{ function('get_option', 'soundcloud_client_id') }}"
+      , GOOD_SCHOOLS_PLAYLIST_ID = "{{ function('get_option', 'goodschools_playlist_id') }}";
+</script>
+{% endblock %}
+
+{% block header %}
+<div class="container">
+    <div id="agoodschoolis" class="row"></div>    
+</div>
+{% endblock %}
+
 {% block posts %}
     {% if search_query %}
     <div class="search_query">

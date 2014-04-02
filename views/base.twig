@@ -18,9 +18,9 @@
         
         <title>{{wp_title}}</title>
         
+        {% block head %}{% endblock %}
+        
         {{ wp_head }}
-        {% block head %}
-        {% endblock %}
     </head>
     <body class="{{ body_class }}" data-source="base.twig">
         {% include 'topnav.twig' %}

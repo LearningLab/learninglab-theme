@@ -1,8 +1,12 @@
 <?php
 
+define('THEME_URL', get_stylesheet_directory_uri());
+define('COMPONENTS', THEME_URL . '/bower_components');
+
 // all our includes
 $includes = array(
-    '/inc/widgets.php'
+    '/inc/agoodschoolis/agoodschoolis.php',
+    '/inc/widgets.php',
 );
 
 // include all the things
@@ -20,10 +24,6 @@ add_filter('timber_context', 'add_to_context');
 add_filter('get_search_form', 'll_search_form');
 
 //add_action('wp_enqueue_scripts', 'load_scripts');
-
-define('THEME_URL', get_template_directory_uri());
-
-
 
 function add_to_context($context) {
     /* this is where you can add your own data to Timber's context object */
