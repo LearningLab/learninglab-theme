@@ -7,8 +7,9 @@ This is the code that pulls in recent interviews and renders them in the site he
 
 Dependencies:
 
- - jQuery
- - SoundCloud JS SDK
+ - jQuery (WP)
+ - SoundCloud JS SDK (http://connect.soundcloud.com/sdk.js)
+ - SoundCloud Widget JS (https://w.soundcloud.com/player/api.js)
 ***/
 
 (function(SC, $) {
@@ -58,6 +59,10 @@ Dependencies:
     	iframe.setAttribute('src', src + $.param(options));
     }
 
+    /***
+	Running this with empty iframes collapses all widgets into one.
+	Save for later if we want to swap out or otherwise control widgets.
+    ***/
     function render_widget(iframe, track) {
     	// create the widget in an iframe
     	var widget = SC.Widget(iframe);

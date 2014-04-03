@@ -17,7 +17,7 @@ class LL_Good_Schools {
     }
 
     /***
-    Enqueue js/agoodschoolis.js into site footer
+    Enqueue js/agoodschoolis.js and dependencies into site header
     ***/
     function add_scripts() {
         // use hosted soundcloud
@@ -27,11 +27,25 @@ class LL_Good_Schools {
             array('soundcloud', 'soundcloud-widgets', 'jquery'));
     }
 
+    /***
+    Render an input field using input.twig template.
+
+    Context:
+        name: field name, should match option ID
+        value: initial value, fetched before rendering
+        type: input type, defaults to `text`
+    ***/
     function render_field($args) {
         $args['value'] = get_option($args['name'], '');
         Timber::render('input.twig', $args);
     }
 
+    /***
+    Creates our settings section and fields, then registers settings.
+
+    Every call to `add_settings_field` needs to pass an array of $args
+    as its last argument. This gets used to render an input template.
+    ***/
     function admin_init() {
         add_settings_section( 'soundcloud', '',
             array(&$this, 'settings_section'), 'soundcloud');
@@ -49,11 +63,26 @@ class LL_Good_Schools {
         
     }
 
+    /***
+    Callback to create an options page
+    ***/
     function admin_menu() {
         add_options_page('SoundCloud', 'SoundCloud', 'manage_options', 
                         'soundcloud', array(&$this, 'render_options_page'));
     }
 
+    /***
+    Render an options page, including the form.
+
+        template: options_page.twig
+
+    Context:
+
+        title: Page title
+        settings_section: call the `settings_fields` function with this argument
+        settings_sections: call the `do_settings_sections` function with this argument
+
+    ***/
     function render_options_page() {
         $context = array(
             'title' => 'SoundCloud Options',
@@ -64,6 +93,7 @@ class LL_Good_Schools {
         Timber::render('options_page.twig', $context);
     }
 
+    // no op function, because WordPress
     function settings_section() {}
 
 }
