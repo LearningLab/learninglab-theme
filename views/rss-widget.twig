@@ -1,0 +1,20 @@
+{% extends 'widget.twig' %}
+
+{% block widget_body %}
+<ul class="rss-links list-unstyled">
+	{% for item in feed.get_items(0, instance.items) %}
+	<li>
+		<h5><a href="{{ item.get_link }}">{{ item.get_title }}</a></h5>
+		{% if instance.show_summary %}
+		<span class="rss-source">{{ feed.get_title }}</span> |
+		<time datetime="{{ item.get_date }}">{{ item.get_date|date('F j, Y') }}</time>
+
+		<div class="rss-item-summary">
+			{{ item.get_description }}
+		</div>
+
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endblock %}

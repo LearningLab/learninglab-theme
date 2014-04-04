@@ -1,10 +1,18 @@
 {{ before_widget|raw }}
 <div class="panel panel-default">
     <div class="panel-heading">
+    	{% if instance.title_link %}
+		<h3 class="panel-title">
+			<a href="{{ instance.title_link }}">{{ instance.title }}</a>
+		</h3>
+		{% else %}
         <h3 class="panel-title">{{ instance.title }}</h3>
+        {% endif %}
     </div>
     <div class="panel-body">
-        {% block widget_body %}{% endblock %}
+        {% block widget_body %}
+		{{ instance|print_r }}
+        {% endblock %}
     </div>
 </div>
 
