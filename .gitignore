@@ -1,1 +1,5 @@
+# osx
 .DS_Store
+
+# node.js
+npm-debug.log
