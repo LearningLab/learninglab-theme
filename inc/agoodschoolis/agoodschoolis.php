@@ -28,7 +28,7 @@ class LL_Good_Schools {
     }
 
     /***
-    Render an input field using input.twig template.
+    Render an input field using admin/input.twig template.
 
     Context:
         name: field name, should match option ID
@@ -37,7 +37,7 @@ class LL_Good_Schools {
     ***/
     function render_field($args) {
         $args['value'] = get_option($args['name'], '');
-        Timber::render('input.twig', $args);
+        Timber::render('admin/input.twig', $args);
     }
 
     /***
@@ -74,7 +74,7 @@ class LL_Good_Schools {
     /***
     Render an options page, including the form.
 
-        template: options_page.twig
+        template: admin/options_page.twig
 
     Context:
 
@@ -90,7 +90,7 @@ class LL_Good_Schools {
             'settings_field' => 'soundcloud'
         );
 
-        Timber::render('options_page.twig', $context);
+        Timber::render('admin/options_page.twig', $context);
     }
 
     // no op function, because WordPress

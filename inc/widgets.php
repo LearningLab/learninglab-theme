@@ -33,7 +33,7 @@ function ll_widgets() {
         }
 
         function widget($args, $instance) {
-            $templates = array('about-widget.twig', 'widget.twig');
+            $templates = array('widgets/about-widget.twig', 'widgets/widget.twig');
             
             // use args for context
             $args['instance'] = $instance;
@@ -51,7 +51,7 @@ function ll_widgets() {
         }
 
         function widget($args, $instance) {
-            $templates = array('rss-widget.twig', 'widget.twig');
+            $templates = array('widgets/rss-widget.twig', 'widgets/widget.twig');
 
             $args['instance'] = $instance;
             $args['site'] = $site;

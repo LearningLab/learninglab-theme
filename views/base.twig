@@ -23,7 +23,7 @@
         {{ wp_head }}
     </head>
     <body class="{{ body_class }}" data-source="base.twig">
-        {% include 'topnav.twig' %}
+        {% include "includes/topnav.twig" %}
         <header class="header">
             {% block header %}
             <div class="container">
@@ -69,7 +69,7 @@
         </section>
 
         <footer id="footer">
-            {% include 'footer.twig' %}
+            {% include "footer.twig" %}
         </footer>
         {{ wp_footer }}
     </body>
