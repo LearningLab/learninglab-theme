@@ -9,9 +9,9 @@ function ll_widgets() {
     $largo = array(
         'largo_about_widget'                => 'LL_About_Widget',
         null                                => 'LL_RSS_Widget',
+        'largo_follow_widget'               => 'LL_Follow_Widget',
         //'largo_donate_widget'             => '/inc/widgets/largo-donate.php',
         //'largo_facebook_widget'           => '/inc/widgets/largo-facebook.php',
-        //'largo_follow_widget'             => '/inc/widgets/largo-follow.php',
         //'largo_footer_featured_widget'    => '/inc/widgets/largo-footer-featured.php',
         //'largo_image_widget'              => '/inc/widgets/largo-image-widget.php',
         //'largo_INN_RSS_widget'            => '/inc/widgets/largo-inn-rss.php',
@@ -60,6 +60,23 @@ function ll_widgets() {
                 // if we have a url, fetch the feed
                 $args['feed'] = fetch_feed($instance['url']);
             }
+
+            Timber::render($templates, $args);
+        }
+    }
+
+    class LL_Follow_Widget extends largo_follow_widget {
+
+        function widget($args, $instance) {
+            $templates = array('widgets/follow-widget.twig', 'widgets/widget.twig');
+
+            $args['instance'] = $instance;
+            $args['site'] = $site;
+
+            $args['feed_link'] = of_get_option('rss_link', get_feed_link());
+            $args['twitter_link'] = of_get_option('twitter_link');
+            $args['facebook_link'] = of_get_option('facebook_link');
+            $args['linkedin_link'] = of_get_option('linkedin_link');
 
             Timber::render($templates, $args);
         }
