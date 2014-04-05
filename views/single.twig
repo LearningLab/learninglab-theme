@@ -1,11 +1,19 @@
 {% extends "base.twig" %}
 
+{% block header %}
+<div class="container">
+	<div class="row">
+		<h1 class="col-md-12">{{ post.title }}</h1>
+	</div>
+</div>
+{% endblock %}
+
 {% block posts %}
 
 <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 	<section class="article-content">
 		<header>
-			<h1 class="entry-title" itemprop="headline">{{ post.title }}</h1>
+			<h1 class="entry-title hidden" itemprop="headline">{{ post.title }}</h1>
 
 			<h5 class="byline">
 				<span class="by-author">
