@@ -9,7 +9,7 @@ $includes = array(
     '/inc/widgets.php',
 );
 
-// include all the things
+// include all the includes
 foreach ( $includes as $include ) {
     require_once( get_stylesheet_directory() . $include );
 }
@@ -17,14 +17,7 @@ foreach ( $includes as $include ) {
 add_theme_support('html5', array('search-form')); 
 
 // twig and timber filters
-add_filter('get_twig', 'add_to_twig');
 add_filter('timber_context', 'add_to_context');
-
-// other filters
-add_filter('get_search_form', 'll_search_form');
-
-//add_action('wp_enqueue_scripts', 'load_scripts');
-
 function add_to_context($context) {
     /* this is where you can add your own data to Timber's context object */
 
@@ -36,7 +29,7 @@ function add_to_context($context) {
     return $context;
 }
 
-
+add_filter('get_twig', 'add_to_twig');
 function add_to_twig($twig) {
     /* this is where you can add your own fuctions to twig */
     $twig->addExtension(new Twig_Extension_StringLoader());
@@ -88,10 +81,22 @@ function get_largo_menus() {
 /***
 Override the default search form with a proper template
 ***/
+add_filter('get_search_form', 'll_search_form');
 function ll_search_form($form) {
     $context = array('site' => new TimberSite());
     $form = Timber::compile('searchform.twig', $context);
     return $form;
+}
+
+/***
+Remove caption inline width
+
+    $caption_width = apply_filters( 'img_caption_shortcode_width', $caption_width, $atts, $content );
+
+***/
+add_filter('img_caption_shortcode_width', 'no_caption_width');
+function no_caption_width($caption_width, $atts, $content) {
+    return 0;
 }
 
 /***
