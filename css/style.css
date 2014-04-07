@@ -5854,6 +5854,20 @@ img[class*="wp-image-"] {
   font-size: 12px;
   padding: .5em 10% 0 10%;
 }
+article header .byline {
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#agoodschoolis {
+  float: left;
+  margin-bottom: 20px;
+}
+.row .explainer {
+  float: left;
+  width: 100%;
+}
 /***
 Fat footer styles
 ***/
