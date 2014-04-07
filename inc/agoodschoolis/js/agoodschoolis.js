@@ -13,6 +13,9 @@ Dependencies:
 ***/
 
 (function(SC, $) {
+
+    // bail early if credentials aren't present
+    if (!window.SOUNDCLOUD_CLIENT_ID || !window.GOOD_SCHOOLS_PLAYLIST_ID) { return; }
     
     // initialize soundcloud
     SC.initialize({ client_id: SOUNDCLOUD_CLIENT_ID });
