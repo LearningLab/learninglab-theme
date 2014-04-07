@@ -5849,6 +5849,11 @@ img[class*="wp-image-"] {
   width: 100%;
   height: 100%;
 }
+.wp-caption-text {
+  color: #555555;
+  font-size: 12px;
+  padding: .5em 10% 0 10%;
+}
 /***
 Fat footer styles
 ***/

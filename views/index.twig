@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block head %}
+{{ super() }}
 <script>
     var SOUNDCLOUD_CLIENT_ID = "{{ function('get_option', 'soundcloud_client_id') }}"
       , GOOD_SCHOOLS_PLAYLIST_ID = "{{ function('get_option', 'goodschools_playlist_id') }}";

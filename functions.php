@@ -95,7 +95,7 @@ Remove caption inline width
 
 ***/
 add_filter('img_caption_shortcode_width', 'no_caption_width');
-function no_caption_width($caption_width, $atts, $content) {
+function no_caption_width() {
     return 0;
 }
 
