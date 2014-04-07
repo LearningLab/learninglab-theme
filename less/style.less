@@ -3,12 +3,37 @@ Learning Lab specific styles, built on Bootstrap 3
 ***/
 //@import "../bower_components/bootstrap/less/bootstrap.less";
 
+/***
+WBUR colors
+
+    WBUR gray: #333333;
+    WBUR yellow: #d89a0a;
+    links: #25408f;
+
+    panel background: #f5f5f5;
+    panel border: #e5e5e5;
+    navbar border: #e8e8e8;
+
+    highlight: #D34313;
+
+    primary button: 
+        background: #d34313;
+        text: #fff;
+***/
+
 // Core variables and mixins
 @import "../bower_components/bootstrap/less/variables.less";
 @import "../bower_components/bootstrap/less/mixins.less";
 
 // set override variables here
 @icon-font-path: "../bower_components/bootstrap/fonts/";
+
+@brand-primary: #25408f;
+@brand-success: #d89a0a;
+@brand-info:    #5bc0de;
+@brand-warning: #D34313;
+@brand-danger:  #d9534f;
+
 
 // Reset
 @import "../bower_components/bootstrap/less/normalize.less";
@@ -55,24 +80,6 @@ Learning Lab specific styles, built on Bootstrap 3
 // Utility classes
 @import "../bower_components/bootstrap/less/utilities.less";
 @import "../bower_components/bootstrap/less/responsive-utilities.less";
-
-
 @import "./wp-responsive-media.less";
 
-/***
-WBUR colors
-
-    WBUR gray: #333333;
-    WBUR yellow: #d89a0a;
-    links: rgb(51, 51, 51);
-
-    panel background: #f5f5f5;
-    panel border: #e5e5e5;
-    navbar border: #e8e8e8;
-
-    highlight: #D34313;
-
-    primary button: 
-        background: #d34313;
-        text: #fff;
-***/
+@import "./footer.less";
