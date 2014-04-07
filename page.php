@@ -24,4 +24,6 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$context['is_single'] = true;
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
