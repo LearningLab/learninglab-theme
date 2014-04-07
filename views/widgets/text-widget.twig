@@ -1,0 +1,9 @@
+{% extends "widgets/widget.twig" %}
+
+{% block widget_body %}
+{% if instance.filter %}
+{{ instance.text|wpautop }}
+{% else %}
+{{ instance.text }}
+{% endif %}
+{% endblock %}

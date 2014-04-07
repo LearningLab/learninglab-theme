@@ -13,6 +13,7 @@ function ll_widgets() {
         null                                => 'LL_RSS_Widget',
         'largo_follow_widget'               => 'LL_Follow_Widget',
         'largo_recent_posts_widget'         => 'LL_Recent_Posts_Widget',
+        'WP_Widget_Text'                    => 'LL_Text_Widget',
         //'largo_donate_widget'             => '/inc/widgets/largo-donate.php',
         //'largo_facebook_widget'           => '/inc/widgets/largo-facebook.php',
         //'largo_footer_featured_widget'    => '/inc/widgets/largo-footer-featured.php',
@@ -23,6 +24,21 @@ function ll_widgets() {
         //'largo_taxonomy_list_widget'      => '/inc/widgets/largo-taxonomy-list.php',
         //'largo_twitter_widget'            => '/inc/widgets/largo-twitter.php'
     );
+
+    class LL_Text_Widget extends WP_Widget_Text {
+
+        function widget($args, $instance) {
+
+            $templates = array('widgets/text-widget.twig', 'widgets/widget.twig');
+            
+            // use args for context
+            $args['instance'] = $instance;
+            $args['site'] = new TimberSite();
+
+            Timber::render($templates, $args);
+
+        }
+    }
 
     class LL_About_Widget extends largo_about_widget {
 
