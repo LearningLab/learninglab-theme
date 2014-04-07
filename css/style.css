@@ -5855,12 +5855,6 @@ img[class*="wp-image-"] {
   font-size: 12px;
   padding: .5em 10% 0 10%;
 }
-::-moz-selection {
-  background: #f4e10e;
-}
-::selection {
-  background: #f4e10e;
-}
 .navbar .navbar-brand {
   color: #222222;
   font-weight: bold;
