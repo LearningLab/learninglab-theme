@@ -7,9 +7,6 @@ which are defined late in the load cycle.
 ***/
 function ll_widgets() {
 
-    // reuse one site instance
-    $site = new TimberSite();
-
     // unregister and replace these widgets
     $largo = array(
         'largo_about_widget'                => 'LL_About_Widget',
@@ -42,7 +39,8 @@ function ll_widgets() {
             
             // use args for context
             $args['instance'] = $instance;
-            $args['site'] = $site;
+            $args['site'] = new TimberSite();
+            //$args['logo'] = of_get_option('favicon');
 
             Timber::render($templates, $args);
         }
@@ -59,7 +57,7 @@ function ll_widgets() {
             $templates = array('widgets/rss-widget.twig', 'widgets/widget.twig');
 
             $args['instance'] = $instance;
-            $args['site'] = $site;
+            $args['site'] = new TimberSite();
 
             if (isset($instance['url'])) {
                 // if we have a url, fetch the feed
@@ -76,7 +74,7 @@ function ll_widgets() {
             $templates = array('widgets/follow-widget.twig', 'widgets/widget.twig');
 
             $args['instance'] = $instance;
-            $args['site'] = $site;
+            $args['site'] = new TimberSite();
 
             $args['feed_link'] = of_get_option('rss_link', get_feed_link());
             $args['twitter_link'] = of_get_option('twitter_link');
@@ -93,7 +91,7 @@ function ll_widgets() {
             $templates = array('widgets/recent-posts-widget.twig', 'widgets/widget.twig');
 
             $args['instance'] = $instance;
-            $args['site'] = $site;
+            $args['site'] = new TimberSite();
             $args['posts_term'] = of_get_option( 'posts_term_plural', 'Posts' );
             $args['posts'] = $this->get_posts($instance);
 

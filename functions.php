@@ -37,8 +37,9 @@ function add_to_twig($twig) {
     return $twig;
 }
 
-
+add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts() {
+    wp_enqueue_script( 'largo-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js' );
     wp_enqueue_script('jquery');
 }
 

@@ -1,5 +1,9 @@
 {% extends 'widgets/widget.twig' %}
 
 {% block widget_body %}
+{% if logo %}
+<img src="{{ logo }}" alt="{{ site.title }}" class="left">
+{% endif %}
 {{ function('of_get_option', 'site_blurb')|wpautop }}
+
 {% endblock %}
