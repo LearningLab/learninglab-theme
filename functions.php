@@ -111,3 +111,6 @@ function largo_enqueue_js() {}
 
 // outputs the site header, which is what templates are for
 function largo_header() {}
+
+// calculates a header image based on screen size
+function largo_header_js() {}

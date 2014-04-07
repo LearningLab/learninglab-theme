@@ -5857,6 +5857,9 @@ img[class*="wp-image-"] {
 /***
 Fat footer styles
 ***/
+.DV-pixelping {
+  position: absolute;
+}
 footer {
   background-color: #333333;
   padding: 0 0 20px;
