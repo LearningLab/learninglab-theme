@@ -5854,13 +5854,50 @@ Fat footer styles
 ***/
 footer {
   background-color: #333333;
+  padding: 0 0 20px;
 }
 footer h2,
 footer h3,
-footer h4,
-footer p {
+footer h4 {
   color: #eeeeee;
 }
+footer p {
+  color: #999999;
+}
 footer a {
-  color: #2f52b8;
+  color: #4a6cd0;
+}
+footer a:hover {
+  color: #9baee5;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  line-height: 20px;
+  margin-bottom: 13.33333333px;
+  list-style: none;
+}
+footer .post-lead img.wp-post-image {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+footer #menu-footer-navigation li {
+  border-bottom: 1px solid #555555;
+}
+footer #menu-footer-navigation li.menu-label {
+  display: none !important;
+  visibility: hidden !important;
+}
+footer #footer-legal {
+  border-top: 2px solid #999999;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+footer .footer-credit {
+  float: left;
+}
+footer .back-to-top {
+  float: right;
 }

@@ -4,12 +4,60 @@ Fat footer styles
 
 footer {
 	background-color: @gray-dark;
+	padding: 0 0 @line-height-computed;
 
-	h2, h3, h4, p {
+	h2, h3, h4 {
 		color: @gray-lighter;
 	}
 
-	a {
-		color: lighten(@brand-primary, 10%);
+	p {
+		color: @gray-light;
 	}
+
+	a {
+		color: lighten(@brand-primary, 20%);
+
+		&:hover {
+			color: lighten(@brand-primary, 40%);
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+		    line-height: @line-height-computed;
+		    margin-bottom: @line-height-computed / 1.5;
+		    list-style: none;
+	  	}
+	}
+
+	.post-lead img.wp-post-image {
+		float: left;
+		margin: @line-height-computed/2 10px @line-height-computed/2 0;
+	}
+
+	#menu-footer-navigation {
+		li {
+			border-bottom: 1px solid @gray;
+		}
+		li.menu-label {
+			.hidden();
+		}		
+	}
+
+	#footer-legal {
+		border-top: 2px solid @gray-light;
+		margin-top: @line-height-computed;
+		padding-top: @line-height-computed;
+	}
+
+	.footer-credit {
+		float: left;
+	}
+
+	.back-to-top {
+		float: right;
+	}
+
 }
