@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/css?family=Droid+Sans:400,700);
 /***
 Learning Lab specific styles, built on Bootstrap 3
 ***/
@@ -285,7 +286,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -2134,8 +2135,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #d89a0a;
-  border-color: #c08909;
+  background-color: #f4e10e;
+  border-color: #decd0a;
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -2143,8 +2144,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
   color: #ffffff;
-  background-color: #b17e08;
-  border-color: #855f06;
+  background-color: #d0bf09;
+  border-color: #a49707;
 }
 .btn-success:active,
 .btn-success.active,
@@ -2166,11 +2167,11 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #d89a0a;
-  border-color: #c08909;
+  background-color: #f4e10e;
+  border-color: #decd0a;
 }
 .btn-success .badge {
-  color: #d89a0a;
+  color: #f4e10e;
   background-color: #ffffff;
 }
 .btn-info {
@@ -4308,11 +4309,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #1b2e66;
 }
 .label-success {
-  background-color: #d89a0a;
+  background-color: #f4e10e;
 }
 .label-success[href]:hover,
 .label-success[href]:focus {
-  background-color: #a77708;
+  background-color: #c6b609;
 }
 .label-info {
   background-color: #5bc0de;
@@ -4556,7 +4557,7 @@ a.thumbnail.active {
   animation: progress-bar-stripes 2s linear infinite;
 }
 .progress-bar-success {
-  background-color: #d89a0a;
+  background-color: #f4e10e;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
@@ -5854,11 +5855,24 @@ img[class*="wp-image-"] {
   font-size: 12px;
   padding: .5em 10% 0 10%;
 }
-article header .byline {
+::-moz-selection {
+  background: #f4e10e;
+}
+::selection {
+  background: #f4e10e;
+}
+.navbar .navbar-brand {
+  color: #222222;
+  font-weight: bold;
+}
+article .byline {
   border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #999999;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+article:not(:firstchild) {
+  border-top: 1px solid #d5d5d5;
 }
 #agoodschoolis {
   float: left;

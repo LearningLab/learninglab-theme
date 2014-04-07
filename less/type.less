@@ -1,8 +1,20 @@
 // text and typography
 
-article header .byline {
+::-moz-selection { background: @brand-success; }
+::selection      { background: @brand-success; } 
+
+.navbar .navbar-brand {
+	color: @gray-darker;
+	font-weight: bold;
+}
+
+article .byline {
 	border-top: 1px solid @gray-lighter;
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @gray-light;
 	padding-top: @line-height-computed / 2;
 	padding-bottom: @line-height-computed / 2;
+}
+
+article:not(:firstchild) {
+	border-top: 1px solid darken(@gray-lighter, 10%);
 }
