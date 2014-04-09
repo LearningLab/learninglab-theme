@@ -5859,14 +5859,23 @@ img[class*="wp-image-"] {
   color: #222222;
   font-weight: bold;
 }
+article:not(:firstchild) {
+  border-top: 1px solid #d5d5d5;
+}
 article .byline {
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #999999;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-article:not(:firstchild) {
-  border-top: 1px solid #d5d5d5;
+article .social {
+  border-bottom: 1px solid #999999;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+article .social .fb-like,
+article .social .twitter-tweet-button {
+  vertical-align: middle;
 }
 #agoodschoolis {
   float: left;
