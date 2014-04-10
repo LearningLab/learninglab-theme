@@ -5869,9 +5869,28 @@ article .byline {
   padding-bottom: 10px;
 }
 article .social {
+  border-top: 1px solid #999999;
   border-bottom: 1px solid #999999;
   margin-bottom: 10px;
+  margin-top: 20px;
   padding-bottom: 10px;
+  padding-top: 10px;
+}
+article .social:before,
+article .social:after {
+  content: " ";
+  display: table;
+}
+article .social:after {
+  clear: both;
+}
+article .social:before,
+article .social:after {
+  content: " ";
+  display: table;
+}
+article .social:after {
+  clear: both;
 }
 article .social .fb-like,
 article .social .twitter-tweet-button {

@@ -13,17 +13,27 @@
 <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 	<section class="article-content">
 		<header>
+			{# here for semantics but displayed above. Is there a better way? #}
 			<h1 class="entry-title hidden" itemprop="headline">{{ post.title }}</h1>
+
 			{% include "includes/byline.twig" %}
+
 		</header>
-		<div class="social">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en">Tweet</a>
+
+		<div class="article-body col-md-11 col-md-offset-1">
+			{{ post.content }}
+		</div>
+
+		<div class="social col-md-12">
+			<a href="https://twitter.com/share" 
+			   class="twitter-share-button" 
+			   data-lang="en"
+			   data-via="@LearningLab"
+			   data-count="horizontal">Tweet</a>
 
 			<div class="fb-like" data-href="{{ post.link }}" data-width="250" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
 		</div>
-		<div class="article-body">
-			{{ post.content }}
-		</div>
+
 	</section>
 
 	<section class="comments">
