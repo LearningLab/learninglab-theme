@@ -5859,28 +5859,31 @@ img[class*="wp-image-"] {
   color: #222222;
   font-weight: bold;
 }
-article:before,
-article:after {
-  content: " ";
-  display: table;
-}
-article:after {
-  clear: both;
-}
-article:before,
-article:after {
-  content: " ";
-  display: table;
-}
-article:after {
-  clear: both;
-}
-article:not(:firstchild) {
+article {
   border-top: 1px solid #d5d5d5;
+}
+article:before,
+article:after {
+  content: " ";
+  display: table;
+}
+article:after {
+  clear: both;
+}
+article:before,
+article:after {
+  content: " ";
+  display: table;
+}
+article:after {
+  clear: both;
+}
+article:firstchild {
+  border-top: none;
 }
 article .byline {
   border-top: 1px solid #eeeeee;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #eeeeee;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -5911,6 +5914,9 @@ article .social:after {
 article .social .fb-like,
 article .social .twitter-tweet-button {
   vertical-align: middle;
+}
+article .read-more {
+  font-weight: bold;
 }
 #agoodschoolis {
   float: left;

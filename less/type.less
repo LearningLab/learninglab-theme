@@ -11,14 +11,15 @@
 article {
 
 	.clearfix();
+	border-top: 1px solid darken(@gray-lighter, 10%);
 
-	&:not(:firstchild) {
-		border-top: 1px solid darken(@gray-lighter, 10%);
+	&:firstchild {
+		border-top: none;
 	}
 
 	.byline {
 		border-top: 1px solid @gray-lighter;
-		border-bottom: 1px solid @gray-light;
+		border-bottom: 1px solid @gray-lighter;
 		padding-top: @line-height-computed / 2;
 		padding-bottom: @line-height-computed / 2;
 	}
@@ -36,6 +37,10 @@ article {
 		.twitter-tweet-button {
 			vertical-align: middle;
 		}
+	}
+
+	.read-more {
+		font-weight: bold;
 	}
 
 }
