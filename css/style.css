@@ -5859,6 +5859,22 @@ img[class*="wp-image-"] {
   color: #222222;
   font-weight: bold;
 }
+article:before,
+article:after {
+  content: " ";
+  display: table;
+}
+article:after {
+  clear: both;
+}
+article:before,
+article:after {
+  content: " ";
+  display: table;
+}
+article:after {
+  clear: both;
+}
 article:not(:firstchild) {
   border-top: 1px solid #d5d5d5;
 }
