@@ -6,7 +6,7 @@
 	<h5>
 		<a href="{{ post.link }}">{{ post.title }}</a>
 	</h5>
-	{{ post.get_preview(30)|wpautop }}
+	{{ post.get_preview(15, false, 'Read More', true)|wpautop }}
 </div>
 
 {% endfor %}
