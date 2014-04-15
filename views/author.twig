@@ -3,7 +3,7 @@
 {% block posts %}
 
 {% for post in posts %}
-	{% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+	{% include ["includes/tease-"~post.post_type~".twig", "includes/tease.twig"] %}
 {% endfor %}
 
 {% endblock %}
