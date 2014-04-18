@@ -38,5 +38,3 @@ if (is_day()){
 $data['posts'] = Timber::get_posts();
 
 Timber::render($templates, $data);
-
-error_log('Loaded archive.php');
