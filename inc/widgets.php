@@ -159,4 +159,4 @@ function ll_widgets() {
 
 }
 
-add_action( 'widgets_init', 'll_widgets', 15 );
+add_action( 'widgets_init', 'll_widgets', 25 );

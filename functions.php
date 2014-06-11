@@ -115,3 +115,6 @@ function largo_header() {}
 
 // calculates a header image based on screen size
 function largo_header_js() {}
+
+// turn this off because it's broken
+function custom_sidebars_dropdown() {}
