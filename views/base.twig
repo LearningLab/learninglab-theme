@@ -16,7 +16,7 @@
 
         <link rel="pingback" href="{{ site.pingback_url }}" />
         
-        <title>{{ site.name }}</title>
+        <title>{% block title %}{{ site.name }}{% endblock %}</title>
         
         {% block head %}{% endblock %}
         
