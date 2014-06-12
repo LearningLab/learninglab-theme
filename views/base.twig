@@ -46,7 +46,8 @@
         </header>
 
         <section id="content" role="main" class="container">
-            
+
+            {% block content %}
             <div class="row">
                 <div class="posts col-md-8">
 
@@ -66,6 +67,8 @@
                 </aside> <!-- /.sidebar -->
 
             </div> <!-- /.row -->
+            {% endblock %}
+
         </section>
 
         <footer id="footer">

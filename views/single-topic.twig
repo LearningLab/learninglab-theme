@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<h1>{{ topic.title }}</h1>
+
+<ul>
+	{% for post in topic.get_posts %}
+	<li>{{ post.title }}</li>
+	{% endfor %}
+</ul>
+{% endblock %}
