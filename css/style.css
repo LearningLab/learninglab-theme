@@ -5859,9 +5859,6 @@ img[class*="wp-image-"] {
   color: #222222;
   font-weight: bold;
 }
-article {
-  border-top: 1px solid #d5d5d5;
-}
 article:before,
 article:after {
   content: " ";
@@ -5881,11 +5878,15 @@ article:after {
 article:firstchild {
   border-top: none;
 }
-article .byline {
+article .byline,
+article .metadata {
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   padding-top: 11px;
-  padding-bottom: 11px;
+  margin-bottom: 11px;
+}
+article .metadata p {
+  font-style: italic;
 }
 article .social {
   border-top: 1px solid #999999;

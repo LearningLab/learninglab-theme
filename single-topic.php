@@ -10,9 +10,9 @@
  */
 
 $context = Timber::get_context();
-$context['topic'] = new Topic();
+$context['topic'] = $topic = new Topic();
 $context['is_single'] = true;
 
-$templates = array('single-' . $post->post_type . '.twig', 'single.twig');
+$templates = array('single-' . $topic->post_type . '.twig', 'single.twig');
 
 Timber::render($templates, $context);

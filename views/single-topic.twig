@@ -1,13 +1,44 @@
 {% extends "base.twig" %}
 
+{% block title %}{{ topic.title }} - {{ site.title }}{% endblock %}
+
 {% block header %}{% endblock %}
 
 {% block content %}
-<h1>{{ topic.title }}</h1>
+<div class="row">
+	<header class="col-md-12">
+		<h1>{{ topic.title }}</h1>
+	</header>
+</div>
+<div class="row">
+	<article class="col-md-8">
+		<div class="metadata">
+			<p>Updated: {{ topic.post_modified|date }}</p>
 
-<ul>
+			<div class="sharing">
+				
+			</div>
+		</div>
+		{{ topic.content }}
+	</article>
+</div>
+
+<div class="row">
+	<div class="col-md-8" id="topic-posts">
+	<h2>Latest Posts</h2>
 	{% for post in topic.get_posts %}
-	<li>{{ post.title }}</li>
+		<article>
+			{% if post.thumbnail %}
+				<img src="{{ post.thumbnail.src|resize(150, 150) }}" class="align-right">
+			{% endif %}
+			<time>{{ post.post_date|date }}</time>
+			<h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
+			<div class="post-excerpt">
+				{{ post.get_preview(25, true, 'Read More &rarr;', false) }}
+			</div>
+		</article>
+		<hr>
 	{% endfor %}
-</ul>
+	</div>
+</div>
 {% endblock %}
