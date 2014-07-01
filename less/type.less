@@ -22,10 +22,10 @@ article {
 		border-bottom: 1px solid @gray-lighter;
 		padding-top: @line-height-computed / 2;
 		padding-bottom: @line-height-computed / 2;
+		margin-bottom: @line-height-computed / 2;
 	}
 
 	.metadata {
-		margin-bottom: @line-height-computed / 2;
 	}
 
 	.social {
@@ -36,16 +36,16 @@ article {
 		margin-top: @line-height-computed;
 		padding-bottom: @line-height-computed / 2;
 		padding-top: @line-height-computed / 2;
-
-		.fb-like,
-		.twitter-tweet-button {
-			vertical-align: middle;
-		}
 	}
 
 	.read-more {
 		font-weight: bold;
 	}
+}
+
+.social, .sharing {
+	iframe { vertical-align: middle; }
+	span { display: inline-block; width: 110px; }
 }
 
 .panel {

@@ -1,4 +1,4 @@
-<h5 class="byline">
+<div class="byline">
 	<span class="by-author">
 		<span class="by">By:</span> 
 		<span class="author vcard" itemprop="author">
@@ -7,4 +7,18 @@
 	</span>
 	<span class="sep"> | </span>
 	<time class="entry-date updated dtstamp pubdate" datetime="{{ post.post_date }}">{{ post.display_date }}</time>
-</h5>
+
+	<div class="sharing pull-right">
+		<span class="twitter-button">
+			<a href="https://twitter.com/share" 
+			   class="twitter-share-button" 
+			   data-lang="en"
+			   data-via="@LearningLabMA"
+			   data-count="horizontal">Tweet</a>					
+		</span>
+		<span class="fb-button">
+			<div class="fb-like" data-href="{{ post.link }}" data-width="250" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>					
+		</span>
+	</div>
+
+</div>

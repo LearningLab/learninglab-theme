@@ -5884,8 +5884,6 @@ article .metadata {
   border-bottom: 1px solid #eeeeee;
   padding-top: 11px;
   padding-bottom: 11px;
-}
-article .metadata {
   margin-bottom: 11px;
 }
 article .social {
@@ -5912,12 +5910,17 @@ article .social:after {
 article .social:after {
   clear: both;
 }
-article .social .fb-like,
-article .social .twitter-tweet-button {
-  vertical-align: middle;
-}
 article .read-more {
   font-weight: bold;
+}
+.social iframe,
+.sharing iframe {
+  vertical-align: middle;
+}
+.social span,
+.sharing span {
+  display: inline-block;
+  width: 110px;
 }
 .panel {
   font-size: 14.4px;
