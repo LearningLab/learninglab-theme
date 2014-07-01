@@ -5883,10 +5883,10 @@ article .metadata {
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
   padding-top: 11px;
-  margin-bottom: 11px;
+  padding-bottom: 11px;
 }
-article .metadata p {
-  font-style: italic;
+article .metadata {
+  margin-bottom: 11px;
 }
 article .social {
   border-top: 1px solid #999999;

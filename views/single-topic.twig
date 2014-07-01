@@ -13,7 +13,7 @@
 <div class="row">
 	<article class="col-md-8">
 		<div class="metadata">
-			<p>Updated: {{ topic.post_modified|date }}</p>
+			<span>Updated: {{ topic.post_modified|date }}</span>
 
 			<div class="sharing">
 				
@@ -25,7 +25,8 @@
 
 <div class="row">
 	<div class="col-md-8" id="topic-posts">
-	<h2>Latest Posts</h2>
+	<hr>
+	<h2>Latest Posts: {{ topic.short_title|default(topic.title) }}</h2>
 	{% for post in topic.get_posts %}
 		<article>
 			{% if post.thumbnail %}
