@@ -5851,9 +5851,9 @@ img[class*="wp-image-"] {
   height: 100%;
 }
 .wp-caption-text {
-  color: #555555;
+  color: #666;
   font-size: 14px;
-  padding: .5em 10% 0 10%;
+  padding: .5em 0;
 }
 .navbar .navbar-brand {
   color: #222222;
