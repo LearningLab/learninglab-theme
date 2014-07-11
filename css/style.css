@@ -5913,6 +5913,11 @@ article .social:after {
 article .read-more {
   font-weight: bold;
 }
+.post-topic {
+  background-color: #eeeeee;
+  border-radius: 5px;
+  padding: 0 .5em;
+}
 .social iframe,
 .sharing iframe {
   vertical-align: middle;
