@@ -28,6 +28,27 @@
 
 	</section>
 
+	<section class="topics">
+		{% if topics %}
+		<h3>More about:</h3>
+
+		{% for topic in topics %}
+		<div class="post-topic clearfix" id="topic-{{ topic.slug }}">
+
+		{% if topic.thumbnail %}
+			<a href="{{ topic.link }}"><img src="{{ topic.thumbnail.src|resize(150, 150) }}" class="align-left"></a>
+		{% endif %}
+
+			<h4><a href="{{ topic.link }}">{{ topic.title }}</a></h4>
+			<div class="topic-excerpt">
+				{{ topic.get_preview(25, true, 'Read More &rarr;', false) }}
+			</div>
+		</div>
+		{% endfor %}
+		
+		{% endif %}
+	</section>
+
 	<br class="clearfix">
 	<section class="comments col-md-12">
 		{{ function('comments_template') }}

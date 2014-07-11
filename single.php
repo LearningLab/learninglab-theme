@@ -16,4 +16,8 @@ $context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 $context['is_single'] = true;
 
+if (class_exists('Topical')) {
+	$context['topics'] = Topical::topics_for_post($post->ID);
+}
+
 Timber::render(array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig'), $context);
