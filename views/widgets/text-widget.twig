@@ -2,8 +2,8 @@
 
 {% block widget_body %}
 {% if instance.filter %}
-{{ instance.text|wpautop }}
+{{ instance.text|shortcodes|wpautop }}
 {% else %}
-{{ instance.text }}
+{{ instance.text|shortcodes }}
 {% endif %}
 {% endblock %}

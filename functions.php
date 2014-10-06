@@ -16,9 +16,10 @@ foreach ( $includes as $include ) {
 
 if ( function_exists( 'add_theme_support' ) ) {
     /* Add support for thumbnails to theme */
+    /* let Largo handle this
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 150, 150, true );
-
+    set_post_thumbnail_size( 140, 140, true );
+    */
     /* HTML5 search form */
     add_theme_support('html5', array('search-form')); 
 
