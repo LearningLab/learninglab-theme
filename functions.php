@@ -14,7 +14,15 @@ foreach ( $includes as $include ) {
     require_once( get_stylesheet_directory() . $include );
 }
 
-add_theme_support('html5', array('search-form')); 
+if ( function_exists( 'add_theme_support' ) ) {
+    /* Add support for thumbnails to theme */
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 150, 150, true );
+
+    /* HTML5 search form */
+    add_theme_support('html5', array('search-form')); 
+
+}
 
 // twig and timber filters
 add_filter('timber_context', 'add_to_context');
