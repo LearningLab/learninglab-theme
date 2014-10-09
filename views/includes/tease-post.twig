@@ -5,7 +5,7 @@
 	
 	{% if post.thumbnail and post.post_excerpt %}
 	<div class="excerpt">
-		<img src="{{ post.thumbnail|resize(160, 160, 'default') }}" alt="{{ post.thumbnail.alt }}" class="alignleft">
+		<img src="{{ post.thumbnail }}" alt="{{ post.thumbnail.alt }}" class="alignleft">
 		{{ post.get_preview(50, false, 'Read&nbsp;More&nbsp;&rarr;', false) }}
 	</div>
 	
