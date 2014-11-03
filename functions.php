@@ -48,10 +48,9 @@ function add_to_twig($twig) {
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 function load_scripts() {
-    wp_enqueue_script( 'largo-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js' );
+    wp_enqueue_script('largo-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js');
     wp_enqueue_script('jquery');
 }
-
 
 /***
 Return an array of Timber sidebars for all Largo sidebars
@@ -96,6 +95,24 @@ function ll_search_form($form) {
     $context = array('site' => new TimberSite());
     $form = Timber::compile('searchform.twig', $context);
     return $form;
+}
+
+if (class_exists('Topical')) {
+    add_action('pre_get_posts', 'll_home_topics');
+    function ll_home_topics($query) {
+        if ($query->is_home() && $query->is_main_query() || $query->is_search()) {
+
+            $post_types = $query->get('post_type');
+
+            if (is_array($post_types)) {
+                $post_types[] = 'topic';
+            } else {
+                $post_types = array($post_types, 'topic', 'post');
+            }
+
+            $query->set('post_type', $post_types);
+        }
+    }
 }
 
 /***
